@@ -19,14 +19,14 @@ app.use(compression()); //use compression
 // in the dist directory
 var path = require('path');
 var rootPath = path.normalize(__dirname + '/');
-app.use("/", express.static(rootPath + '/dist'));
+app.use("/", express.static(rootPath + '/dist/angular-playground-two'));
 //app.use(gzippo.staticGzip(__dirname + "/dist", { maxAge: 31557600 }))
 
 // ...
 // For all GET requests, send back index.html
 // so that PathLocationStrategy can be used
 app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname + '/dist/index.html'));
+    res.sendFile(path.join(__dirname + '/dist/angular-playground-two/index.html'));
 });
 
 //added by me should be tested and if does not work remove
